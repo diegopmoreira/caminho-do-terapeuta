@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O Caminho do Terapeuta</title>
+    <meta
+      name="description"
+      content="Formação para psicólogos que querem formar a própria personalidade como instrumento clínico."
+    >
+    <style>
+      :root {
+        --dark: #101315;
+        --dark-2: #171b1d;
+        --ink: #191b1c;
+        --muted: #666d70;
+        --paper: #f7f7f4;
+        --surface: #ffffff;
+        --silver: #d7dce0;
+        --silver-2: #aeb7bd;
+        --gold: #b9934c;
+        --gold-2: #d2b36f;
+        --line: rgba(25, 27, 28, 0.13);
+        --dark-line: rgba(215, 220, 224, 0.14);
+        --shadow: 0 18px 50px rgba(16, 19, 21, 0.12);
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.72;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 48px 22px;
+        background:
+          linear-gradient(135deg, rgba(185, 147, 76, 0.08), transparent 32%),
+          linear-gradient(180deg, #0e1113 0%, #171b1d 100%);
+        color: var(--silver);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 10%;
+        border: 1px solid rgba(215, 220, 224, 0.08);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 80px rgba(215, 220, 224, 0.035),
+          0 0 0 160px rgba(185, 147, 76, 0.035),
+          0 0 0 240px rgba(215, 220, 224, 0.025);
+        transform: translateY(10%);
+        pointer-events: none;
+      }
+
+      .hero-shell {
+        width: min(100%, 980px);
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 42px;
+        color: var(--silver);
+        font-family: var(--serif);
+        font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px solid rgba(215, 220, 224, 0.52);
+        border-radius: 50%;
+      }
+
+      .brand-mark::after {
+        inset: 15px;
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+
+      .brand strong {
+        color: var(--gold-2);
+        font-weight: 400;
+      }
+
+      .hero h1 {
+        max-width: 980px;
+        margin: 0 auto;
+        color: #f4f6f5;
+        font-family: var(--serif);
+        font-size: clamp(2.7rem, 7vw, 6rem);
+        font-weight: 400;
+        line-height: 0.98;
+      }
+
+      .hero-lead {
+        max-width: 820px;
+        margin: 30px auto 0;
+        color: #c5ccd0;
+        font-size: clamp(1.08rem, 2vw, 1.3rem);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 38px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        padding: 14px 22px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 750;
+        letter-spacing: 0.01em;
+        transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        background: var(--gold);
+        color: #111315;
+        border-color: var(--gold);
+      }
+
+      .button-primary:hover {
+        background: var(--gold-2);
+        border-color: var(--gold-2);
+      }
+
+      .button-ghost {
+        color: var(--silver);
+        border-color: rgba(215, 220, 224, 0.34);
+      }
+
+      .section {
+        padding: clamp(64px, 9vw, 118px) 22px;
+      }
+
+      .section-dark {
+        background: var(--dark);
+        color: var(--silver);
+      }
+
+      .container {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+      }
+
+      .narrow {
+        width: min(100%, 820px);
+        margin: 0 auto;
+      }
+
+      .section-label {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h2,
+      h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      h2 {
+        max-width: 820px;
+        font-size: clamp(2rem, 4.4vw, 4rem);
+      }
+
+      h3 {
+        font-size: clamp(1.35rem, 2.3vw, 2rem);
+      }
+
+      p {
+        margin: 0;
+      }
+
+      p + p {
+        margin-top: 18px;
+      }
+
+      .opening {
+        color: #2a2d2f;
+        font-family: var(--serif);
+        font-size: clamp(1.45rem, 3vw, 2.55rem);
+        line-height: 1.18;
+      }
+
+      .copy {
+        margin-top: 28px;
+        color: var(--muted);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 26px;
+        box-shadow: 0 10px 28px rgba(16, 19, 21, 0.05);
+      }
+
+      .card h3 {
+        color: var(--ink);
+        font-size: 1.35rem;
+      }
+
+      .card p {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .bridge {
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        font-family: var(--serif);
+        font-size: clamp(1.45rem, 2.8vw, 2.45rem);
+        line-height: 1.22;
+      }
+
+      .thesis-grid,
+      .product-grid,
+      .about-grid,
+      .fit-grid,
+      .price-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+        gap: clamp(32px, 6vw, 76px);
+        align-items: center;
+      }
+
+      .thesis-text p {
+        color: #d0d6da;
+      }
+
+      .thesis-text p + p {
+        margin-top: 20px;
+      }
+
+      .quote-panel {
+        border-left: 2px solid var(--gold);
+        padding-left: 24px;
+        color: #f4f6f5;
+        font-family: var(--serif);
+        font-size: clamp(1.55rem, 3.2vw, 2.9rem);
+        line-height: 1.14;
+      }
+
+      .anti-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .anti-card {
+        border: 1px solid var(--dark-line);
+        border-radius: 8px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .anti-card h3 {
+        color: var(--gold-2);
+        font-size: 1.3rem;
+      }
+
+      .anti-card p {
+        margin-top: 12px;
+        color: #c5ccd0;
+        font-size: 0.96rem;
+      }
+
+      .path-copy {
+        color: var(--muted);
+      }
+
+      .path-copy h2 {
+        color: var(--ink);
+      }
+
+      .path-copy p {
+        margin-top: 22px;
+      }
+
+      .path-visual {
+        display: grid;
+        place-items: center;
+      }
+
+      .path-diagram {
+        width: min(100%, 430px);
+        aspect-ratio: 1;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      .path-diagram::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(185, 147, 76, 0.12), rgba(255, 255, 255, 0) 62%);
+      }
+
+      .ring {
+        position: absolute;
+        border: 1px solid rgba(185, 147, 76, 0.58);
+        border-radius: 50%;
+      }
+
+      .ring:nth-child(1) {
+        inset: 7%;
+      }
+
+      .ring:nth-child(2) {
+        inset: 16%;
+        border-color: rgba(25, 27, 28, 0.22);
+      }
+
+      .ring:nth-child(3) {
+        inset: 26%;
+      }
+
+      .ring:nth-child(4) {
+        inset: 36%;
+        border-color: rgba(25, 27, 28, 0.2);
+      }
+
+      .ring:nth-child(5) {
+        inset: 46%;
+      }
+
+      .diagram-label {
+        position: absolute;
+        min-width: 116px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px 12px;
+        color: var(--ink);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-align: center;
+        box-shadow: 0 8px 22px rgba(16, 19, 21, 0.08);
+      }
+
+      .diagram-label.base {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-color: var(--gold);
+        background: var(--dark);
+        color: var(--silver);
+      }
+
+      .diagram-label.afetos {
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .diagram-label.ego {
+        top: 42%;
+        right: 0;
+      }
+
+      .diagram-label.sucesso {
+        bottom: 12%;
+        right: 12%;
+      }
+
+      .diagram-label.paternidade {
+        bottom: 12%;
+        left: 10%;
+      }
+
+      .diagram-label.transcendencia {
+        top: 42%;
+        left: 0;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .step {
+        border-top: 1px solid var(--line);
+        padding: 26px 0 4px;
+      }
+
+      .step small {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--gold);
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .step p {
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      .receive {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 36px;
+      }
+
+      .receive-item {
+        min-height: 170px;
+        border: 1px solid var(--dark-line);
+        border-radius: 8px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .receive-item strong {
+        display: block;
+        color: #f5f6f5;
+        font-family: var(--serif);
+        font-size: 1.28rem;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      .receive-item span {
+        display: block;
+        margin-top: 12px;
+        color: #c5ccd0;
+        font-size: 0.96rem;
+      }
+
+      .about-grid {
+        grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      }
+
+      .portrait {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        background: #1f2325;
+      }
+
+      .portrait img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: 53% 50%;
+      }
+
+      .about-copy p {
+        color: var(--muted);
+      }
+
+      .about-copy .section-label {
+        margin-top: 0;
+      }
+
+      .fit-grid {
+        align-items: start;
+      }
+
+      .fit-box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 30px;
+      }
+
+      .fit-box h3 {
+        color: var(--ink);
+      }
+
+      ul {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 24px;
+        color: var(--muted);
+      }
+
+      li + li {
+        margin-top: 13px;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.82em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .price-section {
+        background:
+          linear-gradient(180deg, rgba(16, 19, 21, 0.94), rgba(16, 19, 21, 0.98)),
+          #101315;
+      }
+
+      .price-card {
+        border: 1px solid var(--dark-line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: clamp(28px, 5vw, 46px);
+      }
+
+      .price-card .price {
+        margin: 18px 0 6px;
+        color: #f8faf8;
+        font-family: var(--serif);
+        font-size: clamp(3rem, 7vw, 5.8rem);
+        line-height: 1;
+      }
+
+      .price-card p {
+        color: #c5ccd0;
+      }
+
+      .price-copy p {
+        color: #c5ccd0;
+      }
+
+      .guarantee {
+        display: grid;
+        grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: start;
+        margin-top: 42px;
+        padding-top: 34px;
+        border-top: 1px solid var(--dark-line);
+      }
+
+      .guarantee strong {
+        display: block;
+        color: var(--gold-2);
+        font-family: var(--serif);
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.1;
+      }
+
+      .guarantee p {
+        color: #c5ccd0;
+      }
+
+      .closing {
+        text-align: center;
+      }
+
+      .closing h2 {
+        margin: 0 auto;
+      }
+
+      .closing p {
+        max-width: 720px;
+        margin: 24px auto 0;
+        color: var(--muted);
+      }
+
+      .faq {
+        margin-top: 36px;
+        border-top: 1px solid var(--line);
+      }
+
+      details {
+        border-bottom: 1px solid var(--line);
+        padding: 22px 0;
+      }
+
+      summary {
+        cursor: pointer;
+        color: var(--ink);
+        font-weight: 800;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "+";
+        float: right;
+        color: var(--gold);
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+
+      details[open] summary::after {
+        content: "−";
+      }
+
+      details p {
+        max-width: 760px;
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 34px 22px;
+        border-top: 1px solid var(--line);
+        background: #ffffff;
+      }
+
+      .footer-inner {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .footer-inner a {
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .cards,
+        .steps,
+        .receive,
+        .anti-grid,
+        .thesis-grid,
+        .product-grid,
+        .about-grid,
+        .fit-grid,
+        .price-grid,
+        .guarantee {
+          grid-template-columns: 1fr;
+        }
+
+        .receive {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .quote-panel {
+          order: -1;
+        }
+
+        .hero::before {
+          inset: 22%;
+          box-shadow:
+            0 0 0 58px rgba(215, 220, 224, 0.035),
+            0 0 0 116px rgba(185, 147, 76, 0.035),
+            0 0 0 174px rgba(215, 220, 224, 0.025);
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          font-size: 16px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 48px 18px 64px;
+        }
+
+        .brand {
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 32px;
+          font-size: 0.94rem;
+        }
+
+        .hero h1 {
+          max-width: 10em;
+          font-size: clamp(2rem, 8.5vw, 2.25rem);
+          line-height: 1.05;
+        }
+
+        .hero-lead {
+          max-width: 32ch;
+          font-size: 1rem;
+        }
+
+        .opening {
+          font-size: clamp(1.35rem, 5.8vw, 1.75rem);
+        }
+
+        h2 {
+          font-size: clamp(1.85rem, 7vw, 2.3rem);
+        }
+
+        .button,
+        .button-row {
+          width: 100%;
+        }
+
+        .cards,
+        .receive {
+          grid-template-columns: 1fr;
+        }
+
+        .card,
+        .fit-box,
+        .receive-item {
+          padding: 22px;
+        }
+
+        .path-diagram {
+          width: min(100%, 330px);
+        }
+
+        .diagram-label {
+          min-width: 96px;
+          padding: 7px 9px;
+          font-size: 0.74rem;
+        }
+
+        .diagram-label.ego {
+          right: -6px;
+        }
+
+        .diagram-label.transcendencia {
+          left: -6px;
+        }
+
+        .diagram-label.sucesso,
+        .diagram-label.paternidade {
+          bottom: 8%;
+        }
+
+        .footer-inner {
+          display: block;
+        }
+
+        .footer-inner p + p {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-shell">
+        <div class="brand" aria-label="O Caminho do Terapeuta">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>O Caminho <strong>do Terapeuta</strong></span>
+        </div>
+        <h1>A faculdade te formou sobre o paciente. Nunca te formou no único instrumento que tu usa na sessão: tu mesmo.</h1>
+        <p class="hero-lead">
+          Em toda forma de terapia que funciona, o que cura não é a técnica. É a personalidade do terapeuta.
+          O Caminho do Terapeuta é a formação que afina esse instrumento.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">
+            Quero percorrer o caminho
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="narrow">
+          <p class="opening">Você se formou. Leu os autores. Sabe a teoria de cor.</p>
+          <div class="copy">
+            <p>
+              Mas quando o paciente senta na tua frente e o silêncio se instala, alguma coisa não encaixa.
+              Você busca a técnica certa, o exercício do protocolo, a intervenção do manual, e tem a sensação
+              incômoda de estar aplicando um roteiro a uma pessoa. Funciona pela metade. Às vezes não funciona.
+            </p>
+            <p>
+              E lá no fundo você desconfia de uma coisa que ninguém te falou na formação: o problema não é que
+              falta mais um curso de técnica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-label">Três cenas de consultório</p>
+          <h2>Talvez o incômodo já tenha aparecido de um destes jeitos.</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>A biblioteca ambulante</h3>
+              <p>
+                Tu sabe as técnicas. Aplica o protocolo com rigor. E mesmo assim a sessão não pega.
+                Um dia o paciente diz: “esse exercício eu já fiz com o terapeuta anterior”. E tu percebe
+                que virou um catálogo de intervenções, não um terapeuta.
+              </p>
+            </article>
+            <article class="card">
+              <h3>O que leva a sessão para casa</h3>
+              <p>
+                A dor do paciente te desestabiliza. Tu te confunde com ela, leva pra casa, dorme mal.
+                Falta um lugar firme de onde olhar o sofrimento do outro sem afundar junto.
+              </p>
+            </article>
+            <article class="card">
+              <h3>O que tem vergonha do próprio sucesso</h3>
+              <p>
+                Tu atende, se dedica, estuda, e mesmo assim fatura pouco e se sente inseguro para cobrar
+                o que vale. Não é falta de marketing. É uma relação não resolvida com o próprio sucesso.
+              </p>
+            </article>
+          </div>
+          <p class="bridge">
+            Não falta mais uma técnica. Falta formação do instrumento. A técnica é uma alavanca:
+            te faz fazer menos força. Mas a força é a tua personalidade.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <div class="thesis-grid">
+            <div class="thesis-text">
+              <p class="section-label">A tese</p>
+              <p>
+                A palavra personalidade vem de <em>persona</em>, no latim: aquilo que faz soar. Do grego
+                <em>prosopon</em>: a máscara que os atores usavam no teatro para amplificar a voz. Ou seja:
+                a tua personalidade é o teu instrumento.
+              </p>
+              <p>
+                E todo instrumento tem tamanho. Tu pode ser um triângulo ou pode ser um órgão de mil registros.
+                Quanto mais afinado e robusto o instrumento, mais tu consegue equalizar a pessoa que chega à tua
+                frente, quase sempre desafinada, sem saber ordenar os próprios sons.
+              </p>
+              <p>
+                A psicoterapia acontece entre duas personalidades: uma que já trilhou um certo caminho, e outra
+                que ainda está tentando desatolar a cabeça. Tu só leva o paciente até onde tu mesmo já foi.
+              </p>
+            </div>
+            <p class="quote-panel">
+              A tua personalidade não é um detalhe da clínica. É o instrumento pelo qual a clínica acontece.
+            </p>
+          </div>
+
+          <div class="anti-grid">
+            <article class="anti-card">
+              <h3>O protocolo como salvação</h3>
+              <p>
+                A ilusão de que decorar a abordagem certa faz de ti um terapeuta. Se fosse técnica, bastava o
+                paciente ler o livro. Quem só acumula protocolo vira biblioteca ambulante.
+              </p>
+            </article>
+            <article class="anti-card">
+              <h3>A barreira ideológica</h3>
+              <p>
+                O “tu não viveu o que eu vivi” transforma o outro num ser alheio e incomunicável. Sem compreensão,
+                não há amor. Sem isso, não existe vínculo. E é no vínculo que a terapia acontece.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container product-grid">
+          <div class="path-copy">
+            <p class="section-label">O que é</p>
+            <h2>Uma formação para atravessar primeiro em ti o caminho que depois vai conduzir no outro.</h2>
+            <p>
+              O Caminho do Terapeuta te conduz por cinco mundos: afetos, ego, sucesso, paternidade e transcendência,
+              sobre uma base sólida de antropologia filosófica.
+            </p>
+            <p>
+              Cada mundo vai da compreensão teórica à autoterapia. Tu estuda o que aquilo é, e então atravessa
+              em ti mesmo. É um caminho de saída de si, em círculos que se ampliam: do teu mundo interior até
+              o sentido último da vida.
+            </p>
+          </div>
+          <div class="path-visual" aria-label="Diagrama dos cinco passos do Caminho do Terapeuta">
+            <div class="path-diagram">
+              <span class="ring" aria-hidden="true"></span>
+              <span class="ring" aria-hidden="true"></span>
+              <span class="ring" aria-hidden="true"></span>
+              <span class="ring" aria-hidden="true"></span>
+              <span class="ring" aria-hidden="true"></span>
+              <span class="diagram-label base">Base</span>
+              <span class="diagram-label afetos">Afetos</span>
+              <span class="diagram-label ego">Ego</span>
+              <span class="diagram-label sucesso">Sucesso</span>
+              <span class="diagram-label paternidade">Paternidade</span>
+              <span class="diagram-label transcendencia">Transcendência</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-label">Os cinco passos</p>
+          <h2>O currículo acompanha a maturação do terapeuta, não a coleção de técnicas.</h2>
+          <div class="steps">
+            <article class="step">
+              <small>Base</small>
+              <h3>O que é o ser humano e o que é personalidade</h3>
+              <p>
+                Antropologia filosófica: a personalidade como instrumento; o ser humano como corpo, afeto e razão,
+                e como arco narrativo. Sem essa base, tu estuda um objeto que nunca foi definido pra ti.
+              </p>
+            </article>
+            <article class="step">
+              <small>Passo 1</small>
+              <h3>Afetos</h3>
+              <p>
+                O colorido que damos ao mundo. É aqui que chega a maioria das demandas do consultório:
+                pessoas afetadas, com a pergunta no peito: “sou amado ou não sou?”.
+              </p>
+            </article>
+            <article class="step">
+              <small>Passo 2</small>
+              <h3>Ego</h3>
+              <p>
+                A saída ao mundo: autodeterminar-se, encontrar os próprios limites, estabelecer regras para não
+                viver perdido e confuso. O eu que se testa diante das circunstâncias.
+              </p>
+            </article>
+            <article class="step">
+              <small>Passo 3</small>
+              <h3>Sucesso</h3>
+              <p>
+                A relação madura com gerar frutos: passar de apto a capaz. Aqui se trabalha tua postura como
+                terapeuta no mundo: cobrar sem culpa, se colocar, ter sucesso sem inflar e sem se sabotar.
+              </p>
+            </article>
+            <article class="step">
+              <small>Passo 4</small>
+              <h3>Paternidade</h3>
+              <p>
+                A virada do acumular para o transbordar. A palavra-chave é estabilidade: o sujeito que já não
+                busca só para si, mas transborda bens, cuidado e amor para a comunidade ao redor.
+              </p>
+            </article>
+            <article class="step">
+              <small>Passo 5</small>
+              <h3>Transcendência</h3>
+              <p>
+                Sentar de frente com a finitude e deixar que isso dê completude e sentido à vida inteira.
+                É a dimensão onde o terapeuta sustenta, junto ao paciente, aquilo que é maior do que qualquer técnica.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <p class="section-label">O que tu recebe</p>
+          <h2>Uma formação organizada, com início, meio e fim, para formar o instrumento antes de empilhar novos protocolos.</h2>
+          <div class="receive">
+            <div class="receive-item">
+              <strong>Módulos em vídeo</strong>
+              <span>Teoria e autoterapia guiada para atravessar cada um dos cinco mundos.</span>
+            </div>
+            <div class="receive-item">
+              <strong>Base filosófica</strong>
+              <span>A antropologia que organiza o caminho e dá unidade ao trabalho clínico.</span>
+            </div>
+            <div class="receive-item">
+              <strong>Exercícios por etapa</strong>
+              <span>Práticas de autoterapia para trabalhar em ti aquilo que depois aparece na sessão.</span>
+            </div>
+            <div class="receive-item">
+              <strong>Acesso na plataforma</strong>
+              <span>Após a confirmação da compra, tu recebe as instruções para começar o percurso.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container about-grid">
+          <figure class="portrait">
+            <img src="assets/diego-moreira.jpg" alt="Diego Moreira, psicólogo clínico">
+          </figure>
+          <div class="about-copy">
+            <p class="section-label">Quem conduz</p>
+            <h2>Sou Diego Moreira.</h2>
+            <div class="copy">
+              <p>
+                Sou psicólogo clínico há cerca de 10 anos, com consultório próprio e trabalho de supervisão clínica
+                de outros psicoterapeutas. Minha prática integra a filosofia clássica, a psicologia e o que de fato
+                acontece dentro de uma sessão.
+              </p>
+              <p>
+                Este não é mais um curso de técnica feito por quem nunca atendeu. É o caminho que eu mesmo trilhei
+                e que uso todos os dias no consultório: sintetizado, organizado e entregue para você não precisar
+                levar dez anos para encontrá-lo sozinho.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container fit-grid">
+          <div class="fit-box">
+            <h3>É pra ti se</h3>
+            <ul>
+              <li>Tu é recém-formado ou está no início da clínica e sente que sabe a teoria, mas trava na frente do paciente.</li>
+              <li>Tu quer formar o instrumento, tu mesmo, e não colecionar mais um protocolo.</li>
+              <li>Tu desconfia que a abordagem, sozinha, não cura; que o que sustenta a terapia é o encontro.</li>
+              <li>Tu é estudante de psicologia ou estuda o tema a sério e quer entender a psicoterapia por dentro.</li>
+            </ul>
+          </div>
+          <div class="fit-box">
+            <h3>Não é pra ti se</h3>
+            <ul>
+              <li>Tu procura um protocolo pronto que te dispense do trabalho de se olhar.</li>
+              <li>Tu acredita que basta a técnica certa para o paciente melhorar.</li>
+              <li>Tu quer uma fórmula de encher a agenda sem nenhuma formação por baixo.</li>
+              <li>Tu não está disposto a fazer a autoterapia de cada etapa em ti mesmo.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark price-section">
+        <div class="container">
+          <div class="price-grid">
+            <div class="price-copy">
+              <p class="section-label">Investimento</p>
+              <h2>Pense no custo de seguir procurando técnica quando o instrumento ainda não foi formado.</h2>
+              <p>
+                Mais um curso esquecido em três meses. Uma hora de supervisão avulsa. Ou o preço silencioso
+                de continuar inseguro toda vez que um paciente senta na tua frente.
+              </p>
+            </div>
+            <div class="price-card">
+              <p>O Caminho do Terapeuta</p>
+              <div class="price">R$ 97</div>
+              <p>Compra única.</p>
+              <div class="button-row">
+                <a class="button button-primary" href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">
+                  Começar o Caminho do Terapeuta
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="guarantee">
+            <strong>7 dias de garantia.</strong>
+            <p>
+              Tu entra, percorre o início, e se não fizer sentido pra ti, devolvo o valor integral:
+              sem fricção e sem perguntas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="container">
+          <p class="section-label">Fechamento</p>
+          <h2>A técnica você encontra em qualquer livro. O que nenhum manual te dá é o instrumento afinado.</h2>
+          <p>
+            O Caminho do Terapeuta é onde você começa a afiná-lo.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">
+              Quero percorrer o caminho
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="narrow">
+          <p class="section-label">Perguntas frequentes</p>
+          <h2>Dúvidas rápidas antes de começar.</h2>
+          <div class="faq">
+            <details>
+              <summary>Sou estudante ou recém-formado. Serve pra mim?</summary>
+              <p>
+                Serve, e talvez seja o melhor momento. O curso não pressupõe anos de consultório: ele te dá a base
+                e a formação do instrumento que a faculdade não deu.
+              </p>
+            </details>
+            <details>
+              <summary>Já faço análise pessoal. Ainda preciso disso?</summary>
+              <p>
+                Análise pessoal e este caminho não competem. Aqui a autoterapia é orientada por uma estrutura
+                teórica específica, os cinco mundos, e voltada à tua formação como terapeuta.
+              </p>
+            </details>
+            <details>
+              <summary>É mais um curso de técnica?</summary>
+              <p>
+                Não. É o oposto. A premissa do curso é que a técnica é secundária: o que forma o terapeuta é a
+                maturação da própria personalidade. A técnica entra como alavanca, não como salvação.
+              </p>
+            </details>
+            <details>
+              <summary>Quanto tempo leva?</summary>
+              <p>
+                São cinco passos sobre uma base, pensados para serem percorridos no teu tempo, com a autoterapia
+                de cada etapa.
+              </p>
+            </details>
+            <details>
+              <summary>Como recebo o acesso?</summary>
+              <p>
+                Assim que a compra é confirmada, tu recebe as instruções de acesso à plataforma pelo checkout.
+              </p>
+            </details>
+            <details>
+              <summary>E se não for pra mim?</summary>
+              <p>
+                Tu tem 7 dias de garantia. Se não fizer sentido, devolvo o valor integral.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>Diego Moreira · Psicólogo Clínico · <a href="https://www.instagram.com/odiego.moreira/" target="_blank" rel="noopener noreferrer">@odiego.moreira</a></p>
+        <p><a href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">Acessar checkout</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
