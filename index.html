@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1395509698785511');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1395509698785511&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>O Caminho do Terapeuta</title>
@@ -75,12 +92,12 @@
         content: "";
         position: absolute;
         inset: 10%;
-        border: 1px solid rgba(215, 220, 224, 0.08);
+        border: 1px solid rgba(215, 220, 224, 0.04);
         border-radius: 50%;
         box-shadow:
-          0 0 0 80px rgba(215, 220, 224, 0.035),
-          0 0 0 160px rgba(185, 147, 76, 0.035),
-          0 0 0 240px rgba(215, 220, 224, 0.025);
+          0 0 0 80px rgba(215, 220, 224, 0.018),
+          0 0 0 160px rgba(185, 147, 76, 0.018),
+          0 0 0 240px rgba(215, 220, 224, 0.012);
         transform: translateY(10%);
         pointer-events: none;
       }
@@ -733,9 +750,9 @@
         .hero::before {
           inset: 22%;
           box-shadow:
-            0 0 0 58px rgba(215, 220, 224, 0.035),
-            0 0 0 116px rgba(185, 147, 76, 0.035),
-            0 0 0 174px rgba(215, 220, 224, 0.025);
+            0 0 0 58px rgba(215, 220, 224, 0.018),
+            0 0 0 116px rgba(185, 147, 76, 0.018),
+            0 0 0 174px rgba(215, 220, 224, 0.012);
         }
       }
 
@@ -822,6 +839,9 @@
           margin-top: 10px;
         }
       }
+
+      .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.3,1); }
+      .rv.in { opacity: 1; transform: none; }
     </style>
   </head>
   <body>
@@ -841,21 +861,22 @@
             Quero percorrer o caminho
           </a>
         </div>
+        <p style="margin-top:22px;color:var(--silver-2);font-size:0.88rem;letter-spacing:0.04em;">Psicólogo clínico · Supervisor de psicoterapeutas · +20 mil seguidores</p>
       </div>
     </header>
 
     <main>
       <section class="section">
-        <div class="narrow">
-          <p class="opening">Você se formou. Leu os autores. Sabe a teoria de cor.</p>
+        <div class="narrow rv">
+          <p class="opening">Tu te formou. Leu os autores. Sabe a teoria de cor.</p>
           <div class="copy">
             <p>
               Mas quando o paciente senta na tua frente e o silêncio se instala, alguma coisa não encaixa.
-              Você busca a técnica certa, o exercício do protocolo, a intervenção do manual, e tem a sensação
+              Tu busca a técnica certa, o exercício do protocolo, a intervenção do manual, e tem a sensação
               incômoda de estar aplicando um roteiro a uma pessoa. Funciona pela metade. Às vezes não funciona.
             </p>
             <p>
-              E lá no fundo você desconfia de uma coisa que ninguém te falou na formação: o problema não é que
+              E lá no fundo tu desconfia de uma coisa que ninguém te falou na formação: o problema não é que
               falta mais um curso de técnica.
             </p>
           </div>
@@ -863,7 +884,7 @@
       </section>
 
       <section class="section">
-        <div class="container">
+        <div class="container rv">
           <p class="section-label">Três cenas de consultório</p>
           <h2>Talvez o incômodo já tenha aparecido de um destes jeitos.</h2>
           <div class="cards">
@@ -898,7 +919,7 @@
       </section>
 
       <section class="section section-dark">
-        <div class="container">
+        <div class="container rv">
           <div class="thesis-grid">
             <div class="thesis-text">
               <p class="section-label">A tese</p>
@@ -942,7 +963,7 @@
       </section>
 
       <section class="section">
-        <div class="container product-grid">
+        <div class="container product-grid rv">
           <div class="path-copy">
             <p class="section-label">O que é</p>
             <h2>Uma formação para atravessar primeiro em ti o caminho que depois vai conduzir no outro.</h2>
@@ -975,7 +996,7 @@
       </section>
 
       <section class="section">
-        <div class="container">
+        <div class="container rv">
           <p class="section-label">Os cinco passos</p>
           <h2>O currículo acompanha a maturação do terapeuta, não a coleção de técnicas.</h2>
           <div class="steps">
@@ -1032,7 +1053,7 @@
       </section>
 
       <section class="section section-dark">
-        <div class="container">
+        <div class="container rv">
           <p class="section-label">O que tu recebe</p>
           <h2>Uma formação organizada, com início, meio e fim, para formar o instrumento antes de empilhar novos protocolos.</h2>
           <div class="receive">
@@ -1057,7 +1078,7 @@
       </section>
 
       <section class="section">
-        <div class="container about-grid">
+        <div class="container about-grid rv">
           <figure class="portrait">
             <img src="assets/diego-moreira.jpg" alt="Diego Moreira, psicólogo clínico">
           </figure>
@@ -1066,13 +1087,13 @@
             <h2>Sou Diego Moreira.</h2>
             <div class="copy">
               <p>
-                Sou psicólogo clínico atendo há mais de 5 anos no consultório próprio e trabalho de supervisão clínica
+                Sou psicólogo clínico, atendo há cerca de 10 anos no consultório próprio e trabalho de supervisão clínica
                 de outros psicoterapeutas. Minha prática integra a filosofia clássica, a psicologia e o que de fato
                 acontece dentro de uma sessão.
               </p>
               <p>
                 Este não é mais um curso de técnica feito por quem nunca atendeu. É o caminho que eu mesmo trilhei
-                e que uso todos os dias no consultório: sintetizado, organizado e entregue para você não precisar
+                e que uso todos os dias no consultório: sintetizado, organizado e entregue pra tu não precisar
                 levar dez anos para encontrá-lo sozinho.
               </p>
             </div>
@@ -1081,7 +1102,7 @@
       </section>
 
       <section class="section">
-        <div class="container fit-grid">
+        <div class="container fit-grid rv">
           <div class="fit-box">
             <h3>É pra ti se</h3>
             <ul>
@@ -1104,7 +1125,7 @@
       </section>
 
       <section class="section section-dark price-section">
-        <div class="container">
+        <div class="container rv">
           <div class="price-grid">
             <div class="price-copy">
               <p class="section-label">Investimento</p>
@@ -1137,11 +1158,11 @@
       </section>
 
       <section class="section closing">
-        <div class="container">
+        <div class="container rv">
           <p class="section-label">Fechamento</p>
-          <h2>A técnica você encontra em qualquer livro. O que nenhum manual te dá é o instrumento afinado.</h2>
+          <h2>A técnica tu encontra em qualquer livro. O que nenhum manual te dá é o instrumento afinado.</h2>
           <p>
-            O Caminho do Terapeuta é onde você começa a afiná-lo.
+            O Caminho do Terapeuta é onde tu começa a afiná-lo.
           </p>
           <div class="button-row">
             <a class="button button-primary" href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">
@@ -1152,7 +1173,7 @@
       </section>
 
       <section class="section">
-        <div class="narrow">
+        <div class="narrow rv">
           <p class="section-label">Perguntas frequentes</p>
           <h2>Dúvidas rápidas antes de começar.</h2>
           <div class="faq">
@@ -1207,5 +1228,11 @@
         <p><a href="https://pay.kiwify.com.br/edskCXD" target="_blank" rel="noopener noreferrer">Acessar checkout</a></p>
       </div>
     </footer>
+  <script>
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  </script>
   </body>
 </html>
